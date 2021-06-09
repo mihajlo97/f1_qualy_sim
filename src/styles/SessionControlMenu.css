@@ -1,0 +1,10 @@
+div.SessionControlMenu-style {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+button.SessionControlMenu-button {
+  width: 160px;
+}

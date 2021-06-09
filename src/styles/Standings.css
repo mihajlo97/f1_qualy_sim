@@ -1,0 +1,27 @@
+table.Standings-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr.Standings-row {
+  border-bottom: 1pt solid gray;
+  background-color: rgb(240, 240, 240);
+}
+
+tr.Standings-row td {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+td img.Standings-flags {
+  vertical-align: middle;
+}
+
+col.Standings-colSmall {
+  width: 10%;
+}
+
+col.Standings-colStandard {
+  width: 20%;
+}

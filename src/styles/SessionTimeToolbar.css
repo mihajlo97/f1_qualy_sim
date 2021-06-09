@@ -1,0 +1,9 @@
+div.SessionTimeToolbar-style {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+button.SessionTimeToolbar-button {
+  width: 60px;
+}

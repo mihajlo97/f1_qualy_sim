@@ -1,0 +1,5 @@
+tr.StadningsHeader-style th {
+  border-bottom: 2pt solid gray;
+  background-color: rgb(184, 179, 179);
+  padding-left: 10px;
+}

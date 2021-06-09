@@ -1,0 +1,9 @@
+div.CircuitHeader-style {
+  display: flex;
+}
+
+span.CircuitHeader-track {
+  font-size: large;
+  font-weight: bold;
+  margin-left: 5px;
+}
