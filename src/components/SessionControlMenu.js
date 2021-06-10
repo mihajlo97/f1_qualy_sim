@@ -1,13 +1,42 @@
+import { useEffect, useState } from 'react';
 import '../styles/SessionControlMenu.css';
 import QualifyingSession from './QualifyingSession';
+import { getSessionPhases } from '../services/sessionDataService.js';
 
-function SessionControlMenu(props) {
-  const label = 'Proceed to next session';
+const actionLabels = ['Start qualifying', 'Start next session', 'View results'];
+
+function SessionControlMenu({
+  session,
+  paused,
+  sessionInProgress,
+  beginSession,
+}) {
+  const [label, setLabel] = useState(actionLabels[0]);
+
+  const updateLabel = () => {
+    const phases = getSessionPhases();
+    const phaseIndex = phases.findIndex((phase) => session === phase);
+
+    setLabel(
+      phaseIndex < phases.length - 3 ? actionLabels[1] : actionLabels[2]
+    );
+  };
+
+  const moveToNextSession = () => {
+    updateLabel();
+    //updateSession();
+    beginSession();
+  };
 
   return (
     <div className='SessionControlMenu-style'>
-      <QualifyingSession qualySession='--' />
-      <button className='SessionControlMenu-button'>{label}</button>
+      <QualifyingSession currentSession={session} paused={paused} />
+      <button
+        className='SessionControlMenu-button'
+        disabled={sessionInProgress}
+        onClick={moveToNextSession}>
+        {label}
+      </button>
     </div>
   );
 }

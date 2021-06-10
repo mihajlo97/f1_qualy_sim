@@ -4,14 +4,14 @@ import '../styles/SimulatorFrame.css';
 import StartSimulatorMenu from './StartSimulatorMenu';
 import SimulatorBody from './SimulatorBody';
 
-function SimulatorFrame(props) {
-  const [selectedCircuit, setSelectedCircuit] = useState(props.circuits[0]);
+function SimulatorFrame({ circuits, drivers }) {
+  const [selectedCircuit, setSelectedCircuit] = useState(circuits[0]);
   const [showSimulatorBody, setShowSimulatorBody] = useState(false);
   const [resetMenu, setResetMenu] = useState(false);
 
   const endSimulation = () => {
     setShowSimulatorBody(false);
-    setSelectedCircuit(props.circuits[0]);
+    setSelectedCircuit(circuits[0]);
     setResetMenu(!resetMenu);
   };
   const startNewSimulation = () => {
@@ -21,7 +21,7 @@ function SimulatorFrame(props) {
   const performCircuitSelection = (ev) => {
     if (showSimulatorBody) return;
 
-    const targetCircuit = props.circuits.find(
+    const targetCircuit = circuits.find(
       (circuit) => circuit.id === parseInt(ev.target.value)
     );
     setSelectedCircuit(targetCircuit);
@@ -30,14 +30,14 @@ function SimulatorFrame(props) {
   return (
     <div className='SimulatorFrame-style'>
       <StartSimulatorMenu
-        circuits={props.circuits}
+        circuits={circuits}
         startNewSimulation={startNewSimulation}
         endSimulation={endSimulation}
         performCircuitSelection={performCircuitSelection}
         key={String(resetMenu)}
       />
       {showSimulatorBody && (
-        <SimulatorBody drivers={props.drivers} circuit={selectedCircuit} />
+        <SimulatorBody drivers={drivers} circuit={selectedCircuit} />
       )}
     </div>
   );

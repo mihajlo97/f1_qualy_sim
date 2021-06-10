@@ -1,7 +1,9 @@
-function QualifyingSession(props) {
+function QualifyingSession({ currentSession, paused }) {
   const label = 'Qualifying session:';
 
-  return <span>{`${label} ${props.qualySession}`}</span>;
+  return (
+    <span>{`${label} ${currentSession} ${paused ? '(Paused)' : ''}`}</span>
+  );
 }
 
 export default QualifyingSession;

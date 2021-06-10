@@ -5,7 +5,7 @@ table.Standings-table {
 
 tr.Standings-row {
   border-bottom: 1pt solid gray;
-  background-color: rgb(240, 240, 240);
+  /*background-color: rgb(240, 240, 240);*/
 }
 
 tr.Standings-row td {

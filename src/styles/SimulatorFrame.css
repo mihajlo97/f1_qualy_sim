@@ -1,8 +1,10 @@
 .SimulatorFrame-style {
   display: inline-block;
-  width: 70%;
+  width: 60%;
   border: 1px solid gray;
   padding: 20px;
   text-align: left;
   margin-bottom: 100px;
+  padding-bottom: 50px;
+  background-color: rgb(243, 243, 241);
 }

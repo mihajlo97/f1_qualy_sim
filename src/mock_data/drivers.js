@@ -3,13 +3,13 @@ const driverData = [
     id: 0,
     driver: 'Lewis Hamilton',
     country: 'United Kingdom',
-    team: 'Mercedes',
+    team: 'Mercedes-AMG',
   },
   {
     id: 1,
     driver: 'Valtteri Bottas',
     country: 'Finland',
-    team: 'Mercedes',
+    team: 'Mercedes-AMG',
   },
   {
     id: 2,
@@ -27,13 +27,13 @@ const driverData = [
     id: 4,
     driver: 'Charles Leclerc',
     country: 'Monaco',
-    team: 'Ferrari',
+    team: 'Scuderia Ferrari',
   },
   {
     id: 5,
     driver: 'Carlos Sainz',
     country: 'Spain',
-    team: 'Ferrari',
+    team: 'Scuderia Ferrari',
   },
   {
     id: 6,

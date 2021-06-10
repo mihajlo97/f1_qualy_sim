@@ -11,17 +11,23 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [flagCodesLoaded, setFlagCodesLoaded] = useState(false);
+  const [fetchingFailed, setFetchingFailed] = useState(false);
   const [availCircuits, setAvailCircuits] = useState(circuits);
   const [availDrivers, setAvailDrivers] = useState(drivers);
 
-  useEffect(() => {
+  const fetchFlagCodes = async () => {
     tryAppendFlagCodes(availCircuits).then((circuitsWithCountryCodes) =>
       setAvailCircuits(circuitsWithCountryCodes)
     );
     tryAppendFlagCodes(availDrivers).then((driversWithCountryCodes) =>
       setAvailDrivers(driversWithCountryCodes)
     );
-    setFlagCodesLoaded(true);
+  };
+
+  useEffect(() => {
+    fetchFlagCodes()
+      .then(() => setFlagCodesLoaded(true))
+      .catch(() => setFetchingFailed(true));
   }, []);
 
   return (
@@ -29,6 +35,11 @@ function App() {
       <h2>F1 Qualifying Simulator</h2>
       {flagCodesLoaded && (
         <SimulatorFrame circuits={availCircuits} drivers={availDrivers} />
+      )}
+      {fetchingFailed && (
+        <p style={{ color: 'red' }}>
+          Something went wrong while loading the app, please refresh the page.
+        </p>
       )}
     </div>
   );

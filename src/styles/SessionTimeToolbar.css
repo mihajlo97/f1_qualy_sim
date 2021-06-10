@@ -2,8 +2,10 @@ div.SessionTimeToolbar-style {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 button.SessionTimeToolbar-button {
-  width: 60px;
+  margin-left: 10px;
+  width: 80px;
 }

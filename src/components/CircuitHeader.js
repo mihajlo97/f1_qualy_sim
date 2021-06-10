@@ -1,15 +1,19 @@
 import '../styles/CircuitHeader.css';
 
-function CircuitHeader(props) {
+function CircuitHeader({ circuit }) {
   return (
     <div className='CircuitHeader-style'>
       <img
-        src={`https://flagcdn.com/h24/${props.circuit.countryCode}.png`}
-        srcset={`https://flagcdn.com/h48/${props.circuit.countryCode}.png 2x`}
+        src={`https://flagcdn.com/h24/${
+          circuit.countryCode ? circuit.countryCode : 'es'
+        }.png`}
+        srcset={`https://flagcdn.com/h48/${
+          circuit.countryCode ? circuit.countryCode : 'es'
+        }.png 2x`}
         height='24'
-        alt={`${props.circuit.country}`}
+        alt={`${circuit.country}`}
       />
-      <span className='CircuitHeader-track'>{`${props.circuit.name}, ${props.circuit.country}`}</span>
+      <span className='CircuitHeader-track'>{`${circuit.name}, ${circuit.country}`}</span>
     </div>
   );
 }

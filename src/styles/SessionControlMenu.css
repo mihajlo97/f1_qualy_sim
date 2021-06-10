@@ -3,8 +3,10 @@ div.SessionControlMenu-style {
   justify-content: space-between;
   margin-top: 10px;
   margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray;
 }
 
 button.SessionControlMenu-button {
-  width: 160px;
+  width: 170px;
 }

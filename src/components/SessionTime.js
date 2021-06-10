@@ -1,7 +1,15 @@
-function SessionTime(props) {
+import {
+  transformToMinutesString,
+  transformToSecondsString,
+} from '../services/sessionDataService.js';
+
+function SessionTime({ timeRemaining }) {
   const label = 'Session time remaining:';
-  const timeRemaining = '17:00';
-  return <span>{`${label} ${timeRemaining}`}</span>;
+
+  const displayMinutes = () => transformToMinutesString(timeRemaining);
+  const displaySeconds = () => transformToSecondsString(timeRemaining);
+
+  return <span>{`${label} ${displayMinutes()}:${displaySeconds()}`}</span>;
 }
 
 export default SessionTime;
