@@ -1,5 +1,4 @@
 // resources
-import logo from './logo.svg';
 import './App.css';
 import circuits from './mock_data/circuits.js';
 import drivers from './mock_data/drivers.js';
@@ -45,7 +44,7 @@ function App() {
   );
 }
 
-const original = (
+/*const original = (
   <div className='App'>
     <header className='App-header'>
       <img src={logo} className='App-logo' alt='logo' />
@@ -61,6 +60,6 @@ const original = (
       </a>
     </header>
   </div>
-);
+);*/
 
 export default App;

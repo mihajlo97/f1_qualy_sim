@@ -6,9 +6,9 @@ function StandingsHeader(props) {
       <th>Pos.</th>
       <th>Country</th>
       <th>Driver</th>
-      <th>Team</th>
-      <th>Best lap</th>
-      <th>Interval</th>
+      <th>Constructor</th>
+      <th>Time</th>
+      <th>Delta</th>
     </tr>
   );
 }

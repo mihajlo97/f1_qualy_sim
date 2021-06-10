@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import '../styles/SessionControlMenu.css';
 import QualifyingSession from './QualifyingSession';
 import { getSessionPhases } from '../services/sessionDataService.js';
@@ -24,7 +24,6 @@ function SessionControlMenu({
 
   const moveToNextSession = () => {
     updateLabel();
-    //updateSession();
     beginSession();
   };
 

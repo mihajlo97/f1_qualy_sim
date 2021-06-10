@@ -6,7 +6,7 @@ function SelectCircuit(props) {
 
   return (
     <>
-      <label for='circuits'>{label}</label>
+      <label htmlFor='circuits'>{label}</label>
       <select name='circuits' onChange={props.performCircuitSelection}>
         {props.circuits.map((data) => (
           <option key={data.id} value={data.id}>

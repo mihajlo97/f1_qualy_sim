@@ -8,6 +8,7 @@ import CircuitHeader from './CircuitHeader';
 import {
   getSessionPhases,
   getStartTimes,
+  getSimTick,
 } from '../services/sessionDataService.js';
 
 function SimulatorBody({ drivers, circuit }) {
@@ -80,7 +81,7 @@ function SimulatorBody({ drivers, circuit }) {
     }
     if (!sessionInProgress || paused) return;
 
-    const timerID = setTimeout(timerTick, 200);
+    const timerID = setTimeout(timerTick, getSimTick());
     return timerID;
   }, [timeRemaining, paused, restartFlag]);
 
@@ -101,7 +102,13 @@ function SimulatorBody({ drivers, circuit }) {
         currentSession={currentSession}
         paused={paused}
       />
-      <Standings drivers={drivers} />
+      <Standings
+        drivers={drivers}
+        paused={paused}
+        restartFlag={restartFlag}
+        currentSession={currentSession}
+        timeRemaining={timeRemaining}
+      />
     </div>
   );
 }

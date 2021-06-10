@@ -7,7 +7,7 @@ function CircuitHeader({ circuit }) {
         src={`https://flagcdn.com/h24/${
           circuit.countryCode ? circuit.countryCode : 'es'
         }.png`}
-        srcset={`https://flagcdn.com/h48/${
+        srcSet={`https://flagcdn.com/h48/${
           circuit.countryCode ? circuit.countryCode : 'es'
         }.png 2x`}
         height='24'
