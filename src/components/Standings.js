@@ -82,7 +82,10 @@ function Standings({ drivers, restartFlag, currentSession, timeRemaining }) {
   };
 
   const updateOrder = () => {
-    if (timeRemaining === 0 || timeRemaining % (2 * 60 + 1) !== 0) {
+    if (
+      (timeRemaining === 0 || timeRemaining % (4 * 60 + 1) !== 0) &&
+      timeRemaining !== 10
+    ) {
       return;
     }
 

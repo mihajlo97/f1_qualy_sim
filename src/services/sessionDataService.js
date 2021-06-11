@@ -1,12 +1,12 @@
 const sessionPhases = ['Warm up', 'Q1', 'Q2', 'Q3', 'Results'];
 
 const startTimes = {
-  Q1: 10 * 60,
-  Q2: 5 * 60,
-  Q3: 3 * 60,
+  Q1: 20 * 60,
+  Q2: 15 * 60,
+  Q3: 12 * 60,
 };
 
-const SIM_TICK = 200;
+const SIM_TICK = 100;
 
 export const getSessionPhases = () => sessionPhases;
 export const getStartTimes = () => startTimes;
