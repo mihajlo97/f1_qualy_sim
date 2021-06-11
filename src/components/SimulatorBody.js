@@ -104,7 +104,6 @@ function SimulatorBody({ drivers, circuit }) {
       />
       <Standings
         drivers={drivers}
-        paused={paused}
         restartFlag={restartFlag}
         currentSession={currentSession}
         timeRemaining={timeRemaining}

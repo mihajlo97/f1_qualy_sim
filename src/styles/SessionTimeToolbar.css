@@ -9,3 +9,7 @@ button.SessionTimeToolbar-button {
   margin-left: 10px;
   width: 80px;
 }
+
+span.SessionTimeToolbar-twoMinutesLeft {
+  color: rgb(206, 44, 44);
+}

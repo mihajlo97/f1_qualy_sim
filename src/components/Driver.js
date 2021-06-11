@@ -4,8 +4,9 @@ import {
   transformToMillisecondsString,
   getSessionPhases,
 } from '../services/sessionDataService.js';
+import Flag from './Flag.js';
 
-function Driver({ driver, lapTime, bestLap }) {
+function Driver({ driver, lapTime, bestLap, currentSession, pos }) {
   const convertTimeToNumber = (time) => parseInt(time);
 
   const checkIfLapSet = () => convertTimeToNumber(lapTime) > 0;
@@ -17,13 +18,22 @@ function Driver({ driver, lapTime, bestLap }) {
 
     const myTime = convertTimeToNumber(lapTime);
     const leaderTime = convertTimeToNumber(bestLap);
+    const delta = myTime - leaderTime;
+    const formattedDelta = `+${parseInt(
+      delta / 1000
+    )}:${transformToMillisecondsString(delta)}`;
 
     if (myTime === leaderTime) {
-      return 'Pole';
+      const phases = getSessionPhases();
+      return currentSession !== phases[phases.length - 1] ? 'Leader' : 'Pole';
     }
 
-    const delta = myTime - leaderTime;
-    return `+${parseInt(delta / 1000)}:${transformToMillisecondsString(delta)}`;
+    const phases = getSessionPhases();
+    if (currentSession === phases[phases.length - 1]) {
+      return pos < 11 ? formattedDelta : pos < 16 ? 'Out in Q2' : 'Out in Q1';
+    }
+
+    return formattedDelta;
   };
 
   const formatLapTime = () => {
@@ -43,12 +53,10 @@ function Driver({ driver, lapTime, bestLap }) {
   return (
     <>
       <td>
-        <img
-          className='Standings-flags'
-          src={`https://flagcdn.com/w40/${driver.countryCode}.png`}
-          srcSet={`https://flagcdn.com/w80/${driver.countryCode}.png 2x`}
-          width='40'
-          alt={driver.country}
+        <Flag
+          country={driver.country}
+          countryCode={driver.countryCode}
+          equalWidth={true}
         />
       </td>
       <td>{driver.driver}</td>

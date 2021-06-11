@@ -5,7 +5,14 @@ table.Standings-table {
 
 tr.Standings-row {
   border-bottom: 1pt solid gray;
-  /*background-color: rgb(240, 240, 240);*/
+}
+
+tr.Standings-row-eliminated {
+  background-color: rgb(252, 209, 209);
+}
+
+tr.Standings-row-qualified {
+  background-color: rgb(187, 250, 187);
 }
 
 tr.Standings-row td {

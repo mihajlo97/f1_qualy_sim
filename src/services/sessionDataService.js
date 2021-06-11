@@ -1,9 +1,9 @@
 const sessionPhases = ['Warm up', 'Q1', 'Q2', 'Q3', 'Results'];
 
 const startTimes = {
-  Q1: 20 * 60,
-  Q2: 15 * 60,
-  Q3: 12 * 60,
+  Q1: 10 * 60,
+  Q2: 5 * 60,
+  Q3: 3 * 60,
 };
 
 const SIM_TICK = 200;
@@ -13,7 +13,9 @@ export const getStartTimes = () => startTimes;
 export const getSimTick = () => SIM_TICK;
 
 export const transformToMinutesString = (seconds) =>
-  seconds / 60 > 9 ? parseInt(seconds / 60) : '0' + parseInt(seconds / 60);
+  Math.floor(seconds / 60) > 9
+    ? parseInt(seconds / 60)
+    : '0' + parseInt(seconds / 60);
 
 export const transformToSecondsString = (seconds) =>
   seconds % 60 > 9 ? seconds % 60 : '0' + (seconds % 60);
@@ -37,5 +39,4 @@ export const mapDriversToSession = (drivers) =>
   drivers.map((driver) => ({
     ...driver,
     lapTime: 0,
-    posChange: 0,
   }));

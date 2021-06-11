@@ -21,7 +21,10 @@ function SessionTimeToolbar({
 
   return (
     <div className='SessionTimeToolbar-style'>
-      <SessionTime timeRemaining={timeRemaining} />
+      <SessionTime
+        timeRemaining={timeRemaining}
+        currentSession={currentSession}
+      />
       <div>
         <button
           className='SessionTimeToolbar-button'

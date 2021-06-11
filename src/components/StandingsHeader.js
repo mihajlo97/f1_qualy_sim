@@ -8,7 +8,7 @@ function StandingsHeader(props) {
       <th>Driver</th>
       <th>Constructor</th>
       <th>Time</th>
-      <th>Delta</th>
+      <th>Gap to leader</th>
     </tr>
   );
 }

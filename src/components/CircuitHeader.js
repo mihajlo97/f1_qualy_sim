@@ -1,17 +1,13 @@
 import '../styles/CircuitHeader.css';
+import Flag from './Flag';
 
 function CircuitHeader({ circuit }) {
   return (
     <div className='CircuitHeader-style'>
-      <img
-        src={`https://flagcdn.com/h24/${
-          circuit.countryCode ? circuit.countryCode : 'es'
-        }.png`}
-        srcSet={`https://flagcdn.com/h48/${
-          circuit.countryCode ? circuit.countryCode : 'es'
-        }.png 2x`}
-        height='24'
-        alt={`${circuit.country}`}
+      <Flag
+        country={circuit.country}
+        countryCode={circuit.countryCode}
+        equalWidth={false}
       />
       <span className='CircuitHeader-track'>{`${circuit.name}, ${circuit.country}`}</span>
     </div>
